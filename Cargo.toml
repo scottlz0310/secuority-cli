@@ -1,0 +1,35 @@
+[package]
+name = "secuority"
+version = "0.1.0"
+edition = "2024"
+description = "Multi-language security & quality configuration tool"
+license = "MIT"
+repository = "https://github.com/scottlz0310/secuority-cli"
+
+[[bin]]
+name = "secuority"
+path = "src/main.rs"
+
+[dependencies]
+# CLI framework
+clap = { version = "4", features = ["derive"] }
+# TUI
+ratatui = "0.29"
+crossterm = "0.28"
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+# HTTP (template fetch)
+reqwest = { version = "0.12", features = ["json"] }
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1"
+# Error handling
+anyhow = "1"
+thiserror = "2"
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tempfile = "3"
